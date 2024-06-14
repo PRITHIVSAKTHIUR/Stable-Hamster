@@ -43,7 +43,8 @@ Take Clone :
 |-------------------------|-------------------------|
 | ![Image 3](assets/3.png) | ![Image 4](assets/4.png) |
 
-
+## How it works
+![alt text](assets/rr.gif)
 
 ![alt text](assets/ty.gif)
 
