@@ -19,9 +19,9 @@ short_description: Fast as Hamster | Stable Hamster | Stable Diffusion
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
 
-![alt text](assets/x.gif)
+![alt text](assets/xy.gif)
 
-![alt text](assets/x.gif)
+![alt text](assets/ty.gif)
 
 ## Compatibility
 
