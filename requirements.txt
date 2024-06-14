@@ -1,0 +1,13 @@
+diffusers
+torch
+gdown
+torchvision
+pipeline
+transformers
+accelerate
+safetensors
+sentencepiece
+spaces
+peft
+gradio
+pillow
