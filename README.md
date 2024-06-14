@@ -21,6 +21,30 @@ Check out the configuration reference at https://huggingface.co/docs/hub/spaces-
 
 ![alt text](assets/xy.gif)
 
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+
+Spaces: https://huggingface.co/spaces/prithivMLmods/STABLE-HAMSTER
+
+Take Clone : 
+    
+    # Make sure you have git-lfs installed (https://git-lfs.com)
+    git lfs install
+    
+    git clone https://huggingface.co/spaces/prithivMLmods/STABLE-HAMSTER
+    
+    # If you want to clone without large files - just their pointers
+    
+    GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/spaces/prithivMLmods/STABLE-HAMSTER
+    
+
+## Sample Images 
+
+| ![Image 1](assets/1.png) | ![Image 2](assets/2.png) |
+|-------------------------|-------------------------|
+| ![Image 3](assets/3.png) | ![Image 4](assets/4.png) |
+
+
+
 ![alt text](assets/ty.gif)
 
 ## Compatibility
