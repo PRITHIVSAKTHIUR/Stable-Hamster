@@ -46,6 +46,19 @@ Take Clone :
 ## How it works
 ![alt text](assets/rr.gif)
 
+
+## Libraries Overview
+
+| Library        | Library        | Library        |
+|----------------|----------------|----------------|
+| `diffusers`    | `pipeline`     | `sentencepiece`|
+| `torch`        | `transformers` | `spaces`       |
+| `gdown`        | `accelerate`   | `peft`         |
+| `torchvision`  | `safetensors`  | `gradio`       |
+| `pillow`       |                |                |
+
+
+
 ![alt text](assets/ty.gif)
 
 ## Compatibility
