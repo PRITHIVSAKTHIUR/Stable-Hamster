@@ -7,7 +7,7 @@ sdk: gradio
 sdk_version: 4.36.1
 app_file: app.py
 base_model: stabilityai/sdxl-turbo
-model: -
+model: any
 type: base_model, model
 pinned: true
 header: mini
