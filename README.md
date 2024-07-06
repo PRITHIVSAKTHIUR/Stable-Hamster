@@ -17,8 +17,6 @@ license: creativeml-openrail-m
 short_description: Fast as Hamster | Stable Hamster | Stable Diffusion
 ---
 
-## DREAM WALLPAPER 🌅
-
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
 
 ![alt text](assets/xy.gif)
