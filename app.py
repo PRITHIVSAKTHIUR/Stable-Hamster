@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+#patch 2.0 ()
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# ...
 import os
 import random
 import uuid
@@ -14,11 +24,21 @@ from diffusers import StableDiffusionXLPipeline, EulerAncestralDiscreteScheduler
 #html_content = f'<iframe src="{html_file_url}" style="width:100%; height:180px; border:none;"></iframe>'
 #html_file_url = "https://prithivmlmods-static-loading-theme.static.hf.space/index.html"
 
-html_file_url = "https://prithivhamster.vercel.app/"
-html_content = f'<iframe src="{html_file_url}" style="width:100%; height:400px; border:none"></iframe>'
+#html_file_url = "https://prithivhamster.vercel.app/"
+#html_content = f'<iframe src="{html_file_url}" style="width:100%; height:400px; border:none"></iframe>'
 
-DESCRIPTIONx = """## STABLE HAMSTER
+DESCRIPTIONx = """## STABLE HAMSTER 🐹
+
 """
+
+DESCRIPTIONy = """
+            <p align="left">
+            <a title="Github" href="https://github.com/PRITHIVSAKTHIUR/Stable-Hamster" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
+                <img src="https://img.shields.io/github/stars/PRITHIVSAKTHIUR/Stable-Hamster?label=GitHub%20%E2%98%85&logo=github&color=C8C" alt="badge-github-stars">
+            </a>
+            </p>
+"""
+
 
 css = '''
 .gradio-container{max-width: 560px !important}
@@ -30,15 +50,29 @@ footer {
 
 examples = [
     "3d image, cute girl, in the style of Pixar --ar 1:2 --stylize 750, 4K resolution highlights, Sharp focus, octane render, ray tracing, Ultra-High-Definition, 8k, UHD, HDR, (Masterpiece:1.5), (best quality:1.5)",
-    "Cold coffee in a cup bokeh --ar 85:128 --v 6.0 --style raw5, 4K"
+    "Cold coffee in a cup bokeh --ar 85:128 --v 6.0 --style raw5, 4K",
+    "Vector illustration of a horse, vector graphic design with flat colors on an brown background in the style of vector art, using simple shapes and graphics with simple details, professionally designed as a tshirt logo ready for print on a white background. --ar 89:82 --v 6.0 --style raw",
+    "Man in brown leather jacket posing for camera, in the style of sleek and stylized, clockpunk, subtle shades, exacting precision, ferrania p30  --ar 67:101 --v 5",
+    "Commercial photography, giant burger, white lighting, studio light, 8k octane rendering, high resolution photography, insanely detailed, fine details, on white isolated plain, 8k, commercial photography, stock photo, professional color grading, --v 4 --ar 9:16 "
+    
 ]
+
+
+#examples = [
+  #  ["file/1.png", "3d image, cute girl, in the style of Pixar --ar 1:2 --stylize 750, 4K resolution highlights, Sharp focus, octane render, ray tracing, Ultra-High-Definition, 8k, UHD, HDR, (Masterpiece:1.5), (best quality:1.5)"],
+   # ["file/2.png", "Cold coffee in a cup bokeh --ar 85:128 --v 6.0 --style raw5, 4K"],
+    #["file/3.png", "Vector illustration of a horse, vector graphic design with flat colors on a brown background in the style of vector art, using simple shapes and graphics with simple details, professionally designed as a tshirt logo ready for print on a white background. --ar 89:82 --v 6.0 --style raw"],
+    #["file/4.png", "Man in brown leather jacket posing for the camera, in the style of sleek and stylized, clockpunk, subtle shades, exacting precision, ferrania p30  --ar 67:101 --v 5"],
+    #["file/5.png", "Commercial photography, giant burger, white lighting, studio light, 8k octane rendering, high resolution photography, insanely detailed, fine details, on a white isolated plain, 8k, commercial photography, stock photo, professional color grading, --v 4 --ar 9:16"]
+#]
+
 
 #Set an os.Getenv variable
 #set VAR_NAME=”VALUE”
 #Fetch an environment variable
 #echo %VAR_NAME%
 
-MODEL_ID = os.getenv("MODEL_REPO")
+MODEL_ID = os.getenv("MODEL_VAL_PATH") #Use SDXL Model as "MODEL_REPO" --------->>> ”VALUE”. 
 MAX_IMAGE_SIZE = int(os.getenv("MAX_IMAGE_SIZE", "4096"))
 USE_TORCH_COMPILE = os.getenv("USE_TORCH_COMPILE", "0") == "1"
 ENABLE_CPU_OFFLOAD = os.getenv("ENABLE_CPU_OFFLOAD", "0") == "1"
@@ -121,7 +155,8 @@ def generate(
     return image_paths, seed
 #Main gr.Block
 with gr.Blocks(css=css, theme="bethecloud/storj_theme") as demo:
-    gr.Markdown(DESCRIPTIONx)
+    gr.Markdown(DESCRIPTIONx)  
+
     with gr.Group():
         with gr.Row():
             prompt = gr.Text(
@@ -225,6 +260,18 @@ with gr.Blocks(css=css, theme="bethecloud/storj_theme") as demo:
         outputs=[result, seed],
         api_name="run",
     )   
-    gr.HTML(html_content)
+
+
+    
+    gr.Markdown(DESCRIPTIONy)
+
+    gr.Markdown("**Disclaimer:**")
+    gr.Markdown("This is the high-quality image generation demo space, which generates images in fractions of a second by using highly detailed prompts. This space can also make mistakes, so use it wisely.")
+    
+    gr.Markdown("**Note:**")
+    gr.Markdown("⚠️ users are accountable for the content they generate and are responsible for ensuring it meets appropriate ethical standards.")
+
+    #gr.HTML(html_content)
+
 if __name__ == "__main__":
     demo.queue(max_size=40).launch()
