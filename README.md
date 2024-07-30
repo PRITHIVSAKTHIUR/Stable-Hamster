@@ -35,7 +35,6 @@ Take Clone :
     # If you want to clone without large files - just their pointers
     
     GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/spaces/prithivMLmods/STABLE-HAMSTER
-    
 
 ## Sample Images 
 
@@ -97,7 +96,6 @@ Here is a practical example :
         outputs=gr.Gallery(),
     ).launch()
 
-   
 We first import spaces (importing it first might prevent some issues but is not mandatory)
 Then we decorate the generate function by adding a @spaces.GPU line before its definition
 
