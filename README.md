@@ -6,8 +6,8 @@ colorTo: pink
 sdk: gradio
 sdk_version: 4.36.1
 app_file: app.py
+model: V4_Lightning
 base_model: stabilityai/sdxl-turbo
-model: any
 type: base_model, model
 pinned: true
 header: mini
