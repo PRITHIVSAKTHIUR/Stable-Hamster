@@ -72,7 +72,7 @@ examples = [
 #Fetch an environment variable
 #echo %VAR_NAME%
 
-MODEL_ID = os.getenv("MODEL_VAL_PATH") #Use SDXL Model as "MODEL_REPO" --------->>> ”VALUE”. 
+MODEL_ID = os.getenv("MODEL_VAL_PATH", "stabilityai/stable-diffusion-xl-base-1.0") #Use SDXL Model as "MODEL_REPO" --------->>> ”VALUE”. 
 MAX_IMAGE_SIZE = int(os.getenv("MAX_IMAGE_SIZE", "4096"))
 USE_TORCH_COMPILE = os.getenv("USE_TORCH_COMPILE", "0") == "1"
 ENABLE_CPU_OFFLOAD = os.getenv("ENABLE_CPU_OFFLOAD", "0") == "1"
